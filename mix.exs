@@ -15,7 +15,8 @@ defmodule ElixirChat.MixFile do
 
   defp deps do
     [
-      {:postgrex, ">= 0.0.0"}
+      {:postgrex, ">= 0.0.0"},
+      {:socket, git: "https://github.com/meh/elixir-socket.git"}
     ]
   end
 
