@@ -3,9 +3,9 @@ defmodule ElixirChat.MixFile do
 
   def project do
     [
-      app: :ElixirChat,
+      app: :SimpleApp,
       version: "0.0.1",
-      elixir: "~> 1.0",
+      elixir: "~> 1.2.5",
       elixirc_paths: elixirc_paths(Mix.env),
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -13,10 +13,15 @@ defmodule ElixirChat.MixFile do
     ]
   end
 
+  def application do
+    [applications: [:postgrex]]
+  end
+
   defp deps do
     [
-      {:postgrex, ">= 0.0.0"},
-      {:socket, git: "https://github.com/meh/elixir-socket.git"}
+      {:postgrex, ">=0.11.1"},
+      {:socket, git: "https://github.com/meh/elixir-socket.git"},
+      {:ecto, "~> 2.0.0-rc.5"}
     ]
   end
 
